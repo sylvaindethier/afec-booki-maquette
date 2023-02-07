@@ -1,0 +1,9 @@
+:root {
+  --font-size: 1rem;
+  --color-lightgrey: hsl(0, 0%, 95%);
+  --color-blue: hsl(216, 100%, 49%);
+}
+
+.search-filters {
+  display: flex;
+}

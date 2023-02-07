@@ -1,0 +1,24 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+
+body {
+  padding: 5rem;
+}
+
+/* Brand styles */
+:root {
+  --font-size: 1rem;
+  --color-lightgrey: hsl(0, 0%, 95%);
+  --color-blue: hsl(216, 100%, 49%);
+}
+
+.search-component {
+  display: flex;
+  margin: var(--font-size) 0;
+}
