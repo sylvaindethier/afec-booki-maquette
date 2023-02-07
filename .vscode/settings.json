@@ -3,5 +3,6 @@
 		"Booki",
 		"Cannebière",
 		"Pomègues"
-	]
+	],
+	"editor.defaultFormatter": "vscode.html-language-features"
 }
