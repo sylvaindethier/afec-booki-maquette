@@ -10,422 +10,382 @@
     <link rel="stylesheet" href="--css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <!--\\\\\ HEADER //////-->
-      <header class="header">
-        <a class="logo-link">
-          <img alt="logo" height="" width="" src="" />
-        </a>
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="active"><a href="#">Hébergements</a></li>
-            <li><a href="#">Activités</a></li>
-          </ul>
-        </nav>
+    <!--\\\\\ HEADER //////-->
+    <header class="container header">
+      <a class="logo-link">
+        <img alt="logo" height="19" width="61" src="assets/logo.svg" />
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="active"><a href="#">Hébergements</a></li>
+          <li><a href="#">Activités</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--///// HEADER \\\\\-->
+
+    <!--\\\\\ MAIN /////-->
+    <main class="container main">
+      <!--\\\\\ SEARCH /////-->
+      <section class="search">
         <section class="headline">
           <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
           <p>En plein centre-ville ou en pleine nature</p>
         </section>
-      </header>
-      <!--///// HEADER \\\\\-->
-
-      <!--\\\\\ SEARCH INPUT /////-->
-      <section class="search-input">
         <form class="search-component search-geo">
-          <label for="search">
-            <!-- FontAwesome icon -->
-            <i
-              class="search-geo--items search-geo--icon fa-solid fa-location-dot"
-            ></i>
-          </label>
-          <input
-            id="search"
-            name="search"
-            class="search-geo--items search-geo--city"
-            type="search"
-            placeholder="Marseille, France"
-            required
-          />
-          <button class="search-geo--items search-geo--submit" type="submit">
-            Rechercher
-          </button>
-        </form>
+          <fieldset class="city">
+            <legend style="display: none;">Ville</legend>
+            <label for="search">
+              <i
+                class="search-geo--items search-geo--icon fa-solid fa-location-dot"
+              ></i>
+            </label>
+            <input
+              id="search"
+              name="search"
+              class="search-geo--items search-geo--city"
+              type="search"
+              placeholder="Marseille, France"
+              required
+            />
+            <input
+              class="search-geo--items search-geo--submit"
+              type="submit"
+              value="Rechercher"
+            />
+          </fieldset>
 
           <!-- Component: Search Filters -->
-          <section class="search-component search-filters filters">
-            <h3 class="search-fliters--text">Filtres</h3>
-            <span
-              ><i class="fa-sharp fa-solid fa-money-bill-wave"></i
-              >Économique</span
-            >
-            <span
-              ><i class="fa-sharp fa-solid fa-child-reaching"></i
-              >Familiale</span
-            >
-            <span><i class="fa-sharp fa-solid fa-heart"></i>Romantique</span>
-            <span
-              ><i class="fa-sharp fa-solid fa-dog"></i>Animaux autorisés</span
-            >
-        </section>
+          <fieldset class="search-component search-filters filters">
+            <legend><h2 class="search-fliters--text">Filtres</h2></legend>
+            <label>
+              <input type="checkbox" />
+              <i class="fa-solid fa-money-bill-wave"></i>Économique
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <i class="fa-solid fa-child-reaching"></i>Familiale
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <i class="fa-solid fa-heart"></i>Romantique
+            </label>
+
+            <label>
+              <input type="checkbox" />
+              <i class="fa-solid fa-dog"></i>Animaux autorisés
+            </label>
+          </fieldset>
+        </form>
 
         <section class="info">
           <!-- Component: Search Info -->
           <div class="search-component search-info">
             <!-- FontAwesome icon -->
-            <i class="search-info--icon fa-sharp fa-solid fa-info"></i>
+            <i class="search-info--icon fa-solid fa-info"></i>
             <span class="search-info--detail"
               >Plus de 500 logements sont disponible dans cette ville</span
             >
           </div>
         </section>
       </section>
-      <!--///// SEARCH INPUT \\\\\-->
+      <!--///// SEARCH \\\\\-->
 
-      <!--\\\\\ SEARCH RESULT /////-->
-      <main class="search-result">
-        <h2>Hébergements à Marseille</h2>
+      <!--\\\\\ HOSTING /////-->
+      <section class="hosting">
+        <!--\\\\\ HOSTING RESULT /////-->
+        <main class="hosting-result">
+          <h2>Hébergements à Marseille</h2>
 
-        <section class="card-container">
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Auberge la Cannebière"
-            data-location-price="25€"
-            data-location-rating="4o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Auberge la Cannebière"
-              src="img/la_cannebiere.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Auberge la Cannebière</h3>
-              <div class="card-description">Nuit à partir de 25€</div>
-              <div class="card-rating rating-4o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded"> star </span>
-              </div>
-            </figcaption>
-          </figure>
+          <section class="card-container">
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Auberge la Cannebière"
+              data-location-price="25€"
+              data-location-rating="4o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Auberge la Cannebière"
+                src="img/la_cannebiere.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Auberge la Cannebière</h3>
+                <div class="card-description">Nuit à partir de 25€</div>
+                <div class="card-rating rating-4o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star"></i>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel du Port"
-            data-location-price="52€"
-            data-location-rating="5o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel du Port"
-              src="img/hotel_du_port.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel du Port</h3>
-              <div class="card-description">Nuit à partir de 52€</div>
-              <div class="card-rating rating-5o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-              </div>
-            </figcaption>
-          </figure>
+                  <!-- Google Fonts Material Symbols -->
+                  <!-- <span class="material-symbols-rounded checked fill">
+                    star
+                  </span>
+                  <span class="material-symbols-rounded checked fill">
+                    star
+                  </span>
+                  <span class="material-symbols-rounded checked fill">
+                    star
+                  </span>
+                  <span class="material-symbols-rounded checked fill">
+                    star
+                  </span>
+                  <span class="material-symbols-rounded"> star </span> -->
+                </div>
+              </figcaption>
+            </figure>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel les Mouettes"
-            data-location-price="76€"
-            data-location-rating="4o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel les Mouettes"
-              src="img/les_mouettes.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel les Mouettes</h3>
-              <div class="card-description">Nuit à partir de 76€</div>
-              <div class="card-rating rating-4o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded"> star </span>
-              </div>
-            </figcaption>
-          </figure>
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel du Port"
+              data-location-price="52€"
+              data-location-rating="5o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Hôtel du Port"
+                src="img/hotel_du_port.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel du Port</h3>
+                <div class="card-description">Nuit à partir de 52€</div>
+                <div class="card-rating rating-5o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Auberge de la Mer"
-            data-location-price="46€"
-            data-location-rating="3o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Auberge de la Mer"
-              src="img/la_mer.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Auberge de la Mer</h3>
-              <div class="card-description">Nuit à partir de 46€</div>
-              <div class="card-rating rating-3o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded"> star </span>
-                <span class="material-symbols-rounded"> star </span>
-              </div>
-            </figcaption>
-          </figure>
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel les Mouettes"
+              data-location-price="76€"
+              data-location-rating="4o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Hôtel les Mouettes"
+                src="img/les_mouettes.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel les Mouettes</h3>
+                <div class="card-description">Nuit à partir de 76€</div>
+                <div class="card-rating rating-4o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel le Panier"
-            data-location-price="23€"
-            data-location-rating="4o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel le Panier"
-              src="img/le_panier.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel le Panier</h3>
-              <div class="card-description">Nuit à partir de 23€</div>
-              <div class="card-rating rating-4o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded"> star </span>
-              </div>
-            </figcaption>
-          </figure>
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Auberge de la Mer"
+              data-location-price="46€"
+              data-location-rating="3o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Auberge de la Mer"
+                src="img/la_mer.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Auberge de la Mer</h3>
+                <div class="card-description">Nuit à partir de 46€</div>
+                <div class="card-rating rating-3o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel chez Amina"
-            data-location-price="96€"
-            data-location-rating="5o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel chez Amina"
-              src="img/amina.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel chez Amina</h3>
-              <div class="card-description">Nuit à partir de 96€</div>
-              <div class="card-rating rating-4o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-              </div>
-            </figcaption>
-          </figure>
-        </section>
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel le Panier"
+              data-location-price="23€"
+              data-location-rating="4o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Hôtel le Panier"
+                src="img/le_panier.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel le Panier</h3>
+                <div class="card-description">Nuit à partir de 23€</div>
+                <div class="card-rating rating-4o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-        <p class="show-more">
-          <a href="#"><em>Afficher plus</em></a>
-        </p>
-      </main>
-      <!--///// SEARCH RESULT \\\\\-->
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel chez Amina"
+              data-location-price="96€"
+              data-location-rating="5o5"
+            >
+              <img
+                class="card-image"
+                width="335"
+                height="124"
+                alt="image Hôtel chez Amina"
+                src="img/amina.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel chez Amina</h3>
+                <div class="card-description">Nuit à partir de 96€</div>
+                <div class="card-rating rating-4o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </figcaption>
+            </figure>
+          </section>
 
-      <!--\\\\\ POPULAR RESULT /////-->
-      <aside class="search-popular">
-        <h2>Les plus populaires</h2>
+          <p class="show-more">
+            <a href="#"><em>Afficher plus</em></a>
+          </p>
+        </main>
+        <!--///// HOSTING RESULT \\\\\-->
 
-        <section class="card-container">
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel Le soleil du matin"
-            data-location-price="128€"
-            data-location-rating="5o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel Le soleil du matin"
-              src="img/le_soleil.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel Le soleil du matin</h3>
-              <div class="card-description">Nuit à partir de 128€</div>
-              <div class="card-rating rating-5o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-              </div>
-            </figcaption>
-          </figure>
+        <!--\\\\\ HOSTING POPULAR /////-->
+        <aside class="hosting-popular">
+          <h2>Les plus populaires</h2>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Chambres d'hôtes Au cœur de l'eau"
-            data-location-price="71€"
-            data-location-rating="5o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Chambres d'hôtes Au cœur de l'eau"
-              src="img/au_coeur.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Chambres d'hôtes Au cœur de l'eau</h3>
-              <div class="card-description">Nuit à partir de 71€</div>
-              <div class="card-rating rating-5o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-              </div>
-            </figcaption>
-          </figure>
+          <section class="card-container">
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel Le soleil du matin"
+              data-location-price="128€"
+              data-location-rating="5o5"
+            >
+              <img
+                class="card-image"
+                width="137"
+                height="144"
+                alt="image Hôtel Le soleil du matin"
+                src="img/le_soleil.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel Le soleil du matin</h3>
+                <div class="card-description">Nuit à partir de 128€</div>
+                <div class="card-rating rating-5o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-          <!--\\\\\ Card /////-->
-          <figure
-            class="card"
-            data-location-name="Hôtel Bleu et Blanc"
-            data-location-price="68€"
-            data-location-rating="5o5"
-          >
-            <img
-              class="card-image"
-              width="150"
-              height="80"
-              alt="image Hôtel Bleu et Blanc"
-              src="img/bleu_blanc.jpg"
-            />
-            <figcaption class="card-content">
-              <h3 class="card-title">Hôtel Bleu et Blanc</h3>
-              <div class="card-description">Nuit à partir de 68€</div>
-              <div class="card-rating rating-5o5">
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-                <span class="material-symbols-rounded checked fill">
-                  star
-                </span>
-              </div>
-            </figcaption>
-          </figure>
-        </section>
-      </aside>
-      <!--///// POPULAR RESULT \\\\\-->
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Chambres d'hôtes Au cœur de l'eau"
+              data-location-price="71€"
+              data-location-rating="5o5"
+            >
+              <img
+                class="card-image"
+                width="137"
+                height="144"
+                alt="image Chambres d'hôtes Au cœur de l'eau"
+                src="img/au_coeur.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Chambres d'hôtes Au cœur de l'eau</h3>
+                <div class="card-description">Nuit à partir de 71€</div>
+                <div class="card-rating rating-5o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                </div>
+              </figcaption>
+            </figure>
 
-      <!--\\\\\ TODO RESULT /////-->
-      <section class="search-todo">
+            <!--\\\\\ Card /////-->
+            <figure
+              class="card"
+              data-location-name="Hôtel Bleu et Blanc"
+              data-location-price="68€"
+              data-location-rating="5o5"
+            >
+              <img
+                class="card-image"
+                width="137"
+                height="144"
+                alt="image Hôtel Bleu et Blanc"
+                src="img/bleu_blanc.jpg"
+              />
+              <figcaption class="card-content">
+                <h3 class="card-title">Hôtel Bleu et Blanc</h3>
+                <div class="card-description">Nuit à partir de 68€</div>
+                <div class="card-rating rating-5o5">
+                  <!-- FontAwesome -->
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                  <i class="fa-solid fa-star checked fill"></i>
+                </div>
+              </figcaption>
+            </figure>
+          </section>
+        </aside>
+        <!--///// HOSTING POPULAR \\\\\-->
+      </section>
+      <!--///// HOSTING \\\\\-->
+
+      <!--\\\\\ ACTIVITY /////-->
+      <section class="activity">
         <h2>Activités</h2>
 
         <section class="card-container">
@@ -433,8 +393,8 @@
           <figure class="card" data-location-name="Vieux-Port">
             <img
               class="card-image"
-              width="150"
-              height="80"
+              width="335"
+              height="124"
               alt="image Vieux-Port"
               src="img/vieux_port.jpg"
             />
@@ -447,8 +407,8 @@
           <figure class="card" data-location-name="Fort de Pomègues">
             <img
               class="card-image"
-              width="150"
-              height="80"
+              width="335"
+              height="124"
               alt="image Fort de Pomègues"
               src="img/pomegues.jpg"
             />
@@ -461,8 +421,8 @@
           <figure class="card" data-location-name="Parc national des Calanques">
             <img
               class="card-image"
-              width="150"
-              height="80"
+              width="335"
+              height="124"
               alt="image Parc national des Calanques"
               src="img/calanques.jpg"
             />
@@ -475,8 +435,8 @@
           <figure class="card" data-location-name="Notre-Dame-de-la-Garde">
             <img
               class="card-image"
-              width="150"
-              height="80"
+              width="335"
+              height="124"
               alt="image Notre-Dame-de-la-Garde"
               src="img/notre_dame.jpg"
             />
@@ -486,43 +446,48 @@
           </figure>
         </section>
       </section>
-      <!--///// TODO RESULT \\\\\-->
+      <!--///// ACTIVITY \\\\\-->
+    </main>
+    <!--///// MAIN \\\\\-->
 
-      <!--\\\\\ FOOTER /////-->
-      <footer class="footer">
-        <section id="about">
-          <h4>À propos</h4>
-          <ul>
-            <li><a href="#">Fonctionnement du site</a></li>
-            <li><a href="#">Conditions générales</a></li>
-            <li><a href="#">Données et confidentialité</a></li>
-          </ul>
-        </section>
+    <!--\\\\\ FOOTER /////-->
+    <footer class="container footer">
+      <nav class="nav">
+        <h3>À propos</h3>
+        <ul>
+          <li><a href="#">Fonctionnement du site</a></li>
+          <li><a href="#">Conditions générales</a></li>
+          <li><a href="#">Données et confidentialité</a></li>
+        </ul>
+      </nav>
 
-        <section id="places">
-          <h4>Nos hébergements</h4>
-          <ul>
-            <li><a href="#">Charte qualité</a></li>
-            <li><a href="#">Proposer votre hôtel</a></li>
-          </ul>
-        </section>
+      <nav class="nav">
+        <h3>Nos hébergements</h3>
+        <ul>
+          <li><a href="#">Charte qualité</a></li>
+          <li><a href="#">Proposer votre hôtel</a></li>
+        </ul>
+      </nav>
 
-        <section id="assistance">
-          <h4>Assistance</h4>
-          <ul>
-            <li><a href="#">Centre d'aide</a></li>
-            <li><a href="#">Nous contacter</a></li>
-          </ul>
-        </section>
-      </footer>
-      <!--///// FOOTER \\\\\-->
-    </div>
-    <!--///// CONTAINER \\\\\-->
+      <nav class="nav">
+        <h3>Assistance</h3>
+        <ul>
+          <li><a href="#">Centre d'aide</a></li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <!--///// FOOTER \\\\\-->
 
     <!-- FontAwesome -->
-    <!-- <script
+    <script
       src="https://kit.fontawesome.com/a96b215154.js"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
+    <style>
+      .fa-solid.fa-star:not(.checked) {
+        color: lightgrey;
+      }
+    </style>
   </body>
 </html>
