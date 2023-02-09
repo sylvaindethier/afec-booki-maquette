@@ -10,7 +10,11 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+
 /* header nav link */
+.header a {
+  color: var(--color-primary);
+}
 .header .nav a {
   color: unset;
   font-weight: 500;
@@ -26,6 +30,7 @@ body {
 
 /****** MOBILE *****/
 @media (width < 720px) {
+  /* set border to bottom for navigation links */
   .header .nav a {
     border-top-width: 0;
     border-bottom-width: 3px;

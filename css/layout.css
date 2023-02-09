@@ -19,41 +19,63 @@
 .container.footer {
   padding-bottom: var(--container_padding-v);
 }
-
-.container.header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.container a {
+  text-decoration: none;
 }
-.header a {
+
+/********* HEADER **********/
+/* display the size of the inner image */
+.logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+svg.logo-svg {
+  width: 60px;
+  height: 30px;
+}
+
+.header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  /* vertically center all items */
+  align-items: center;
+}
+
+/* center HEADER links */
+.header a {
   text-align: center;
   text-decoration: none;
 }
+
+/* align navigation links vertically center */
+.header .nav {
+  display: flex;
+  align-items: center;
+}
+
+/* space around navigation links */
 .header .nav a {
   padding: 2rem;
 }
 
 /****** MOBILE *****/
 @media (width < 720px) {
-/* reset horizontal padding on header for MOBILE */
-.container.header {
+  .container.header {
+    /* reset horizontal padding */
     padding-top: var(--container_padding-v);
     padding-right: 0;
     padding-left: 0;
+    /* items in columns */
     flex-direction: column;
   }
-  /* header nav link to half width */
+
+  /* header navigation links to half width */
+  .header .nav {
+    width: 100%;
+  }
   .header .nav a {
     width: 50%;
   }
-}
-
-/********** header navigation **********/
-.header .nav {
-  display: flex;
-  align-items: center;
 }
 
 /********** CARD **********/

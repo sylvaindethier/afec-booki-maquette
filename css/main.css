@@ -12,12 +12,21 @@ figure {
   margin: 0;
 }
 /* reset default browser margin on <figure> */
-figure { margin: 0; }
+figure {
+  margin: 0;
+}
 /* reset default browser margin, padding, & list on <nav><ul> */
 nav ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+/* Set initial SVG logo `width` & `height` */
+svg.logo-svg {
+  box-sizing: content-box;
+  width: 200px;
+  height: 90px;
 }
 
 /********************************************/
