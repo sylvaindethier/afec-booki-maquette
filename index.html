@@ -21,7 +21,12 @@
   <!--\\\\\ HEADER //////-->
   <header class="container header">
     <a href="#" class="logo-link">
-      <img alt="logo" data-width="3.8125rem" width="61" src="assets/logo.svg">
+      <!-- <img class="logo-img" alt="logo" data-width="3.8125rem" width="61" src="assets/logo.svg"> -->
+      <!-- Use SVG -->
+      <svg class="logo-svg">
+        <use xlink:href="/assets/logo-enhanced.svg#logo"></use>
+      </svg>
+    
     </a>
     <nav class="nav">
       <a href="#" class="active">Hébergements</a>
