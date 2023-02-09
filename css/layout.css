@@ -19,6 +19,8 @@
 .container.footer {
   padding-bottom: var(--container_padding-v);
 }
+
+/* remove text-decoration for all links */
 .container a {
   text-decoration: none;
 }
