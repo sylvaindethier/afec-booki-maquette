@@ -116,9 +116,8 @@ fieldset {
   /* header navigation links to half width */
   .header .nav {
     width: 100%;
-  }
-  .header .nav a {
-    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   /* restore icon & remove text on search button */
