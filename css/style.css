@@ -32,14 +32,15 @@
   border-color: var(--color-primary);
 }
 
-/***** search *****/
-/* Brand styles */
+/********** SEARCH **********/
 .search {
   --font-size: 1rem;
   --color-lightgrey: hsl(0, 0%, 95%);
   --color-blue: hsl(216, 100%, 49%);
 }
-.search__item.icon {
+
+/********** SEARCH -- City **********/
+.search__city.icon {
   background-color: var(--color-secondary--light);
   /* border radius on the left */
   /* border: 1px solid var(--color-lightgrey); */
@@ -47,14 +48,14 @@
   border-top-left-radius: var(--font-size);
   border-bottom-left-radius: var(--font-size);
 }
-.search__item.input {
+.search__city.input {
   font-weight: bold;
   /* remove border */
   border: 1px solid var(--color-secondary--light);
   border-left: 0 none;
   border-right: 0 none;
 }
-.search__item.submit {
+.search__city.submit {
   background-color: var(--color-primary);
   color: var(--color-secondary--light);
 
@@ -63,6 +64,8 @@
   border-top-right-radius: var(--font-size);
   border-bottom-right-radius: var(--font-size);
 }
+
+/********** SEARCH -- Filters **********/
 
 /****************************/
 /********** MOBILE **********/

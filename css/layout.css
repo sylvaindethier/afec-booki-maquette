@@ -60,25 +60,24 @@ svg.logo-svg {
   padding: 2rem;
 }
 
-/********* SEARCH **********/
+/********** SEARCH **********/
 fieldset {
   margin: 0;
   padding: 0;
   border: none;
 }
-
 .search_component {
   /* display: flex; */
   margin: var(--font-size) 0;
 }
 
+/********** SEARCH -- City **********/
 .search_component.city {
   /* reduce horizontal size w/ inline, make the container flex */
   display: inline-flex;
   align-items: center;
 }
-
-.search__item {
+.search__city {
   font-size: var(--font-size);
 
   /* no space around text */
@@ -90,12 +89,12 @@ fieldset {
   /* reset browser default border */
   border: 0 none;
 }
-
 /* remove icon on search button */
-.search__item.submit .icon {
+.search__city_submit > .icon {
   display: none;
 }
 
+/********** SEARCH -- Filters **********/
 .search_component.filters,
 .search-filters {
   display: flex;
@@ -123,10 +122,10 @@ fieldset {
   }
 
   /* restore icon & remove text on search button */
-  .search__item.submit .icon {
+  .search__city_submit > .icon {
     display: inline-block;
   }
-  .search__item.submit .text {
+  .search__city_submit > .text {
     display: none;
   }
 }
