@@ -60,7 +60,50 @@ svg.logo-svg {
   padding: 2rem;
 }
 
-/****** MOBILE *****/
+/********* SEARCH **********/
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.search_component {
+  /* display: flex; */
+  margin: var(--font-size) 0;
+}
+
+.search_component.city {
+  /* reduce horizontal size w/ inline, make the container flex */
+  display: inline-flex;
+  align-items: center;
+}
+
+.search__item {
+  font-size: var(--font-size);
+
+  /* no space around text */
+  line-height: var(--font-size);
+
+  /* give some space around items */
+  padding: var(--font-size);
+
+  /* reset browser default border */
+  border: 0 none;
+}
+
+/* remove icon on search button */
+.search__item.submit .icon {
+  display: none;
+}
+
+.search_component.filters,
+.search-filters {
+  display: flex;
+}
+
+/****************************/
+/********** MOBILE **********/
+/****************************/
 @media (width < 720px) {
   .container.header {
     /* reset horizontal padding */
@@ -78,7 +121,19 @@ svg.logo-svg {
   .header .nav a {
     width: 50%;
   }
+
+  /* restore icon & remove text on search button */
+  .search__item.submit .icon {
+    display: inline-block;
+  }
+  .search__item.submit .text {
+    display: none;
+  }
 }
+
+/******************************/
+/********** DISABLED **********/
+/******************************/
 
 /********** CARD **********/
 .card-container__ {

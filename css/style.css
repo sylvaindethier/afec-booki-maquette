@@ -1,15 +1,19 @@
 :root {
   --color-primary: #0065fc;
-  --color-primary-light: #deebff;
+  --color-primary--light: #deebff;
   --color-secondary: #d9d9d9;
-  --color-secondary-light: #f2f2f2;
+  --color-secondary--light: #f2f2f2;
 }
+
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
-body {
+* {
   font-family: "Raleway", sans-serif;
 }
-
+:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::before,
+:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::after {
+  font-family: "Raleway", sans-serif;
+}
 
 /* header nav link */
 .header a {
@@ -19,7 +23,7 @@ body {
   color: unset;
   font-weight: 500;
   transition-duration: 0.3s;
-  border: 0 solid var(--color-secondary-light);
+  border: 0 solid var(--color-secondary--light);
   border-top-width: 3px;
 }
 .header .nav a.active,
@@ -28,7 +32,42 @@ body {
   border-color: var(--color-primary);
 }
 
-/****** MOBILE *****/
+/***** search *****/
+/* Brand styles */
+.search {
+  --font-size: 1rem;
+  --color-lightgrey: hsl(0, 0%, 95%);
+  --color-blue: hsl(216, 100%, 49%);
+}
+.search__item {
+  /* border: 1px solid var(--color-lightgrey); */
+  background-color: var(--color-secondary--light);
+}
+.search__item.icon {
+  /* border radius on the left */
+  /* border: 1px solid var(--color-lightgrey); */
+  border-right: 0 none;
+  border-top-left-radius: var(--font-size);
+  border-bottom-left-radius: var(--font-size);
+}
+.search__item.input {
+  /* remove border */
+  border-left: 0 none;
+  border-right: 0 none;
+}
+.search__item.submit {
+  background-color: var(--color-primary);
+  color: var(--color-secondary--light);
+
+  /* border radius on the right */
+  border-left: 0 none;
+  border-top-right-radius: var(--font-size);
+  border-bottom-right-radius: var(--font-size);
+}
+
+/****************************/
+/********** MOBILE **********/
+/****************************/
 @media (width < 720px) {
   /* set border to bottom for navigation links */
   .header .nav a {
@@ -37,6 +76,9 @@ body {
   }
 }
 
+/******************************/
+/********** DISABLED **********/
+/******************************/
 .container__ {
   border-radius: 0.5rem;
   background-color: #f2f2f2;
@@ -56,13 +98,4 @@ body {
   border-top-right-radius: var(--card-image_border-radius); */
   border-radius: var(--card-image_border-radius) var(--card-image_border-radius)
     0 0;
-}
-
-.material-symbols-rounded:not(.checked) {
-  color: #d3d3d3;
-  color: hsl(0, 0%, 80%);
-}
-.material-symbols-rounded.checked {
-  color: #0065fc;
-  color: hsl(216, 100%, 50%);
 }

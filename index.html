@@ -20,13 +20,13 @@
 <body>
   <!--\\\\\ HEADER //////-->
   <header class="container header">
-      <a href="#" class="logo-link">
-        <!-- <img class="logo-img" alt="logo" data-width="3.8125rem" width="61" src="assets/logo.svg"> -->
-        <!-- Use SVG -->
-        <svg class="logo-svg">
-          <use xlink:href="/assets/logo-enhanced.svg#logo"></use>
-        </svg>
-      </a>
+    <a href="#" class="logo-link">
+      <!-- <img class="logo-img" alt="logo" data-width="3.8125rem" width="61" src="assets/logo.svg"> -->
+      <!-- Use SVG -->
+      <svg class="logo-svg">
+        <use xlink:href="/assets/logo-enhanced.svg#logo"></use>
+      </svg>
+    </a>
 
     <nav class="nav">
       <a href="#" class="active">Hébergements</a>
@@ -41,21 +41,28 @@
     <section class="search">
       <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
       <p>En plein centre-ville ou en pleine nature</p>
-      <form class="search-component search-geo">
-        <fieldset class="city">
-          <legend style="display: none;">Ville</legend>
-          <label for="search">
-            <i class="search-geo--items search-geo--icon fa-solid fa-location-dot"></i>
+      <form>
+
+        <!-- Search Component: City -->
+        <fieldset class="search_component city">
+          <legend style="display: none;">
+            <h2 class="search__title">Ville</h2>
+          </legend>
+          <label for="search" class="search__item icon">
+            <i class="fa-solid fa-location-dot"></i>
           </label>
-          <input id="search" name="search" class="search-geo--items search-geo--city" type="search"
+          <input id="search" name="search" class="search__item input" type="search"
             placeholder="Marseille, France" required>
-          <input class="search-geo--items search-geo--submit" type="submit" value="Rechercher">
+          <button class="search__item submit" type="submit" value="Rechercher">
+            <i class="icon fa-solid fa-search"></i>
+            <span class="text">Rechercher</span>
+          </button>
         </fieldset>
 
         <!-- Component: Search Filters -->
-        <fieldset class="search-component search-filters filters">
+        <fieldset class="search_component filters search-filters">
           <legend>
-            <h2 class="search-fliters--text">Filtres</h2>
+            <h2 class="search__title search-fliters--text">Filtres</h2>
           </legend>
           <label>
             <input type="checkbox">
@@ -79,13 +86,11 @@
         </fieldset>
       </form>
 
-      <div class="info">
-        <!-- Component: Search Info -->
-        <div class="search-component search-info">
-          <!-- FontAwesome icon -->
-          <i class="search-info--icon fa-solid fa-info"></i>
-          <span class="search-info--detail">Plus de 500 logements sont disponible dans cette ville</span>
-        </div>
+      <!-- Component: Search Info -->
+      <div class="search_component search-info">
+        <!-- FontAwesome icon -->
+        <i class="search-info--icon fa-solid fa-info"></i>
+        <span class="search-info--detail">Plus de 500 logements sont disponible dans cette ville</span>
       </div>
     </section>
     <!--///// SEARCH \\\\\-->

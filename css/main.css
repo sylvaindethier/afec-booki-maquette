@@ -47,6 +47,12 @@ svg.logo-svg {
   --card--content_margin-h: 0.125rem;
 }
 
+.search {
+  --font-size: 1rem;
+  --color-lightgrey: hsl(0, 0%, 95%);
+  --color-blue: hsl(216, 100%, 49%);
+}
+
 .card {
   --card_border-width: 0.25rem;
   --card_border-radius: 1rem;
