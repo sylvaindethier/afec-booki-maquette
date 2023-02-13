@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo</title>
+  <style>
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+    }
+
+    .logo-svg,
+    .logo {
+      border: 1px dotted black;
+    }
+
+
+    /* Set initial SVG logo `width` & `height` */
+    svg.logo-svg {
+      box-sizing: content-box;
+      width: 200px;
+      height: 90px;
+    }
+
+
+    .logo {
+      /* color: lightblue; */
+      /* fill: lightgreen; */
+      /* --logo--fill: deeppink; */
+    }
+
+    /* For a reason I don't know why, selector MUST NOT be preceded when targeting the embedded SVG file */
+    /* BUG: .logo-svg.use_fill .logo */
+    .logo.use_fill {
+      /* This will override the `fill` attribute of the SVG file */
+      fill: lightgreen;
+    }
+
+    .logo-svg.use_color {
+      /* This will set the `currentColor`, default value for the SVG `fill` attribute */
+      color: lightblue;
+    }
+
+    .logo-svg.use_--logo--fill {
+      /* This will set the primary value for the SVG `fill` attribute */
+      --logo--fill: deeppink;
+    }
+  </style>
+</head>
+
+<body>
+  <p>With &lt;img class="logo-svg"&gt;</p>
+  <img class="logo-svg" src="./logo.svg">
+  <br>
+
+  <p>With &lt;svg class="logo-svg"&gt;</p>
+  <svg class="logo-svg">
+    <use xlink:href="./logo.svg#logo"></use>
+  </svg>
+  <br>
+
+  <p>With &lt;svg class="logo-svg use_fill"&gt;: set CSS `fill`</p>
+  <svg class="logo-svg use_fill">
+    <use xlink:href="./logo-use_fill.svg#logo"></use>
+  </svg>
+  <br>
+
+  <p>With &lt;svg class="logo-svg use_color"&gt;: set CSS `color`</p>
+  <svg class="logo-svg use_color">
+    <use xlink:href="./logo.svg#logo"></use>
+  </svg>
+  <br>
+
+  <p>With &lt;svg class="logo-svg use_--logo--fill"&gt;: set CSS `--logo--fill` variable </p>
+  <svg class="logo-svg use_--logo--fill">
+    <use xlink:href="./logo.svg#logo"></use>
+  </svg>
+  <br>
+
+</body>
+
+</html>

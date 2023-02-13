@@ -1,9 +1,141 @@
-.container {
-  border-radius: 0.5rem;
-  background-color: #f2f2f2;
-  background-color: hsl(0, 0%, 90%);
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  font-family: "Raleway", sans-serif;
+}
+*:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::before,
+*:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::after {
+  font-family: "Raleway", sans-serif;
 }
 
+:root {
+  --color-primary: #0065fc;
+  --color-primary--light: #deebff;
+  --color-secondary: #d9d9d9;
+  --color-secondary--light: #f2f2f2;
+}
+.card-container {
+  --card_border-width: 0.25rem;
+  --card_border-radius: 1rem;
+  --card-image_border-radius: calc(
+    var(--card_border-radius) - var(--card_border-width)
+  );
+}
+/************ TABLETTE ************/
+@media (min-width: 720px) {
+  .card-container {
+    --card_border-width: 0.375rem;
+    --card_border-radius: 1rem;
+  }
+}
+/************ DESKTOP ************/
+@media (min-width: 960px) {
+  .card-container {
+    --card_border-width: 0.5rem;
+    --card_border-radius: 1.25rem;
+  }
+}
+
+/********** HEADER **********/
+/* header nav link */
+.header a {
+  color: var(--color-primary);
+}
+.header .nav a {
+  --header_nav--border: 3px;
+  color: unset;
+  font-weight: 500;
+  transition-duration: 0.3s;
+  border: 0 solid var(--color-secondary--light);
+  border-top-width: var(--header_nav--border);
+}
+.header .nav a.active,
+.header .nav a:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/********** SEARCH **********/
+
+/********** SEARCH -- City **********/
+.search--city .search__item {
+  font-weight: bold;
+  border: 2px solid var(--color-secondary--light);
+}
+.search--city ._label {
+  background-color: var(--color-secondary--light);
+  /* border radius on the left */
+  border-right: 0 none;
+  border-top-left-radius: var(--font-size);
+  border-bottom-left-radius: var(--font-size);
+}
+.search--city ._input {
+  /* remove border */
+  border-left: 0 none;
+  border-right: 0 none;
+}
+.search--city ._submit {
+  background-color: var(--color-primary);
+  color: var(--color-secondary--light);
+
+  /* border radius on the right */
+  border-left: 0 none;
+  border-top-right-radius: var(--font-size);
+  border-bottom-right-radius: var(--font-size);
+}
+
+/********** SEARCH -- Filters **********/
+.search--filter ._label {
+  /* max font-size + 2 * padding */
+  --box-height: calc(1.125rem + (2 * var(--font-size)));
+  --box-height--half: calc(var(--box-height) / 2);
+
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--box-height--half);
+  /*  */
+  border-top-left-radius: var(--box-height--half) 50%;
+  border-bottom-left-radius: var(--box-height--half) 50%;
+  border-top-right-radius: var(--box-height--half) 50%;
+  border-bottom-right-radius: var(--box-height--half) 50%;
+}
+.search--filter .icon {
+  color: var(--color-primary);
+}
+/* remove checkbox */
+.search--filter input {
+  display: none;
+}
+/* search filter when checked */
+.search--filter input:checked + ._label {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary--light);
+}
+/* search filter on hover */
+.search--filter:hover ._label {
+  background-color: var(--color-primary--light);
+}
+.search--filter:hover input:not(:checked) + ._label {
+  scale: 1.1;
+  transition: 0.2s;
+}
+
+/********** SEARCH -- Info **********/
+.--info .icon {
+  color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+}
+
+/********** CARD **********/
+.hosting_component {
+  background-color: var(--color-secondary--light);
+  background-color: gray;
+}
+@media (min-width: 720px) {
+  .hosting_component {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
 .card {
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem 0.125rem hsl(0, 0%, 20%, 0.2);
@@ -26,4 +158,15 @@
 .material-symbols-rounded.checked {
   color: #0065fc;
   color: hsl(216, 100%, 50%);
+}
+
+/****************************/
+/********** MOBILE **********/
+/****************************/
+@media (width < 720px) {
+  /* set border to bottom for navigation links */
+  .header .nav a {
+    border-top-width: 0;
+    border-bottom-width: var(--header_nav--border);
+  }
 }
