@@ -11,20 +11,24 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- FontAwesome -->
   <style>
-    .fa-solid.fa-star:not(.checked) {
+    .fa-solid.fa-star.unchecked, .fa-solid.fa-star:not(.checked) {
       color: lightgrey;
     }
   </style>
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a96b215154.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+
   <!--\\\\\ HEADER //////-->
   <header class="container header">
     <a href="#" class="logo-link">
       <!-- <img class="logo-img" alt="logo" data-width="3.8125rem" width="61" src="assets/logo.svg"> -->
       <!-- Use SVG -->
       <svg class="logo-svg">
-        <use xlink:href="/assets/logo-enhanced.svg#logo"></use>
+        <use xlink:href="assets/logo-enhanced.svg#logo"></use>
       </svg>
     </a>
 
@@ -35,78 +39,106 @@
   </header>
   <!--///// HEADER \\\\\-->
 
+
+
   <!--\\\\\ MAIN /////-->
   <main class="container main">
     <!--\\\\\ SEARCH /////-->
     <section class="search">
-      <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
+      <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
       <p>En plein centre-ville ou en pleine nature</p>
       <form>
 
-        <!-- Search Component: City -->
-        <fieldset class="search_component city">
-          <legend style="display: none;">
-            <h2 class="search__city title">Ville</h2>
-          </legend>
-          <label for="search__city_input" class="search__city icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </label>
-          <input id="search__city_input" name="search__city_input" class="search__city input" type="search" required
-            placeholder="Marseille, France" value="Marseille, France">
-          <button class="search__city submit" type="submit" value="Rechercher">
-            <i class="search__city_submit icon fa-solid fa-search"></i>
-            <span class="search__city_submit text">Rechercher</span>
-          </button>
+        <!-- SEARCH component: city -->
+        <fieldset class="search_component --city">
+          <div class="search--city _legend" style="display: none;">
+            <legend class="legend">
+              <h2 class="title">Ville</h2>
+            </legend>
+          </div>
+
+          <div class="search--city _item">
+            <input class="search__item _input" id="search--city" name="search--city" type="search"
+              placeholder="Marseille, France" value="Marseille, France" required>
+            <label class="search__item _label" for="search--city">
+              <i class="icon fa-solid fa-location-dot"></i>
+            </label>
+            <button class="search__item _submit" type="submit" value="Rechercher">
+              <i class="icon fa-solid fa-search"></i>
+              <span class="text">Rechercher</span>
+            </button>
+          </div>
         </fieldset>
 
-        <!-- Component: Search Filters -->
-        <fieldset class="search_component filters search-filters">
-          <legend>
-            <h2 class="search__title search-fliters--text">Filtres</h2>
-          </legend>
-          <label>
-            <input type="checkbox">
-            <i class="fa-solid fa-money-bill-wave"></i>Économique
-          </label>
 
-          <label>
-            <input type="checkbox">
-            <i class="fa-solid fa-child-reaching"></i>Familiale
-          </label>
+        <!-- SEARCH component: filter -->
+        <fieldset class="search_component --filter ">
+          <div class="search--filter _legend">
+            <legend class="legend">
+              <h2 class="title">Filtres</h2>
+            </legend>
+          </div>
 
-          <label>
-            <input type="checkbox">
-            <i class="fa-solid fa-heart"></i>Romantique
-          </label>
+          <div class="search--filter _item --economique">
+            <input type="checkbox" id="search--filter--economique" name="search--filter--economique"
+              class="search__item _input">
+            <label class="search__item _label" for="search--filter--economique">
+              <i class="icon icon-big fa-solid fa-money-bill-wave"></i>
+              <span class="text">Économique</span>
+            </label>
+          </div>
 
-          <label>
-            <input type="checkbox">
-            <i class="fa-solid fa-dog"></i>Animaux autorisés
-          </label>
+          <div class="search--filter _item --familiale">
+            <input type="checkbox" id="search--filter--familiale" name="search--filter--familiale"
+              class="search__item _input" checked>
+            <label class="search__item _label" for="search--filter--familiale">
+              <i class="icon icon-big fa-solid fa-child-reaching"></i>
+              <span class="text">Familiale</span>
+            </label>
+          </div>
+
+          <div class="search--filter _item --romantique">
+            <input type="checkbox" id="search--filter--romantique" name="search--filter--romantique"
+              class="search__item _input">
+            <label class="search__item _label" for="search--filter--romantique">
+              <i class="icon icon-big fa-solid fa-heart"></i>
+              <span class="text">Romantique</span>
+            </label>
+          </div>
+
+          <div class="search--filter _item --animaux">
+            <input type="checkbox" id="search--filter--animaux" name="search--filter--animaux"
+              class="search__item _input">
+            <label class="search__item _label" for="search--filter--animaux">
+              <i class="icon icon-big fa-solid fa-dog"></i>
+              <span class="text">Animaux autorisés</span>
+            </label>
+          </div>
         </fieldset>
       </form>
 
-      <!-- Component: Search Info -->
-      <div class="search_component search-info">
+      <!-- SEARCH component: info -->
+      <div class="search_component --info -- search-info">
         <!-- FontAwesome icon -->
-        <i class="search-info--icon fa-solid fa-info"></i>
-        <span class="search-info--detail">Plus de 500 logements sont disponible dans cette ville</span>
+        <i class="icon icon-big fa-solid fa-info"></i>
+        <span class="text">Plus de 500 logements sont disponible dans cette ville</span>
       </div>
     </section>
     <!--///// SEARCH \\\\\-->
 
     <!--\\\\\ HOSTING /////-->
     <section class="hosting">
-      <!--\\\\\ HOSTING RESULT /////-->
-      <div class="hosting-result">
+
+      <!--\\\\\ HOSTING component: result /////-->
+      <div class="hosting_component --result">
         <h2>Hébergements à Marseille</h2>
 
-        <section class="card-container">
+        <section class="hosting--result card-container">
           <!--\\\\\ Card /////-->
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Auberge la Cannebière" data-location-price="25€"
               data-location-rating="4o5">
-              <img class="card-image" width="335" height="124" alt="image Auberge la Cannebière"
+              <img class="card-image" --width="335" height="128" alt="image Auberge la Cannebière"
                 src="img/la_cannebiere.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Auberge la Cannebière</h3>
@@ -118,21 +150,6 @@
                   <i class="fa-solid fa-star checked fill"></i>
                   <i class="fa-solid fa-star checked fill"></i>
                   <i class="fa-solid fa-star"></i>
-
-                  <!-- Google Fonts Material Symbols -->
-                  <!-- <span class="material-symbols-rounded checked fill">
-                    star
-                  </span>
-                  <span class="material-symbols-rounded checked fill">
-                    star
-                  </span>
-                  <span class="material-symbols-rounded checked fill">
-                    star
-                  </span>
-                  <span class="material-symbols-rounded checked fill">
-                    star
-                  </span>
-                  <span class="material-symbols-rounded"> star </span> -->
                 </div>
               </figcaption>
 
@@ -143,7 +160,7 @@
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Hôtel du Port" data-location-price="52€"
               data-location-rating="5o5">
-              <img class="card-image" width="335" height="124" alt="image Hôtel du Port" src="img/hotel_du_port.jpg">
+              <img class="card-image" --width="335" height="128" alt="image Hôtel du Port" src="img/hotel_du_port.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Hôtel du Port</h3>
                 <div class="card-price">Nuit à partir de 52<b>€</b></div>
@@ -163,7 +180,7 @@
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Hôtel les Mouettes" data-location-price="76€"
               data-location-rating="4o5">
-              <img class="card-image" width="335" height="124" alt="image Hôtel les Mouettes"
+              <img class="card-image" --width="335" height="128" alt="image Hôtel les Mouettes"
                 src="img/les_mouettes.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Hôtel les Mouettes</h3>
@@ -184,7 +201,7 @@
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Auberge de la Mer" data-location-price="46€"
               data-location-rating="3o5">
-              <img class="card-image" width="335" height="124" alt="image Auberge de la Mer" src="img/la_mer.jpg">
+              <img class="card-image" --width="335" height="128" alt="image Auberge de la Mer" src="img/la_mer.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Auberge de la Mer</h3>
                 <div class="card-price">Nuit à partir de 46<b>€</b></div>
@@ -204,7 +221,7 @@
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Hôtel le Panier" data-location-price="23€"
               data-location-rating="4o5">
-              <img class="card-image" width="335" height="124" alt="image Hôtel le Panier" src="img/le_panier.jpg">
+              <img class="card-image" --width="335" height="128" alt="image Hôtel le Panier" src="img/le_panier.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Hôtel le Panier</h3>
                 <div class="card-price">Nuit à partir de 23<b>€</b></div>
@@ -224,7 +241,7 @@
           <a class="card card-link" href="#">
             <figure class="card-content" data-location-name="Hôtel chez Amina" data-location-price="96€"
               data-location-rating="5o5">
-              <img class="card-image" width="335" height="124" alt="image Hôtel chez Amina" src="img/amina.jpg">
+              <img class="card-image" --width="335" height="128" alt="image Hôtel chez Amina" src="img/amina.jpg">
               <figcaption class="card-desc">
                 <h3 class="card-title">Hôtel chez Amina</h3>
                 <div class="card-price">Nuit à partir de 96<b>€</b></div>
@@ -241,14 +258,14 @@
           </a>
         </section>
 
-        <p class="show-more">
+        <p class="hosting--result show-more">
           <a href="#"><strong>Afficher plus</strong></a>
         </p>
       </div>
-      <!--///// HOSTING RESULT \\\\\-->
+      <!--///// HOSTING component: result \\\\\-->
 
       <!--\\\\\ HOSTING POPULAR /////-->
-      <aside class="hosting-popular">
+      <aside class="hosting_component --popular">
         <h2>Les plus populaires</h2>
 
         <section class="card-container">
@@ -327,7 +344,7 @@
         <!--\\\\\ Card /////-->
         <a class="card card-link" href="#">
           <figure class="card-content" data-location-name="Vieux-Port">
-            <img class="card-image" width="335" height="124" alt="image Vieux-Port" src="img/vieux_port.jpg">
+            <img class="card-image" --width="335" height="128" alt="image Vieux-Port" src="img/vieux_port.jpg">
             <figcaption class="card-desc">
               <h3 class="card-title">Vieux-Port</h3>
             </figcaption>
@@ -337,7 +354,7 @@
         <!--\\\\\ Card /////-->
         <a class="card card-link" href="#">
           <figure class="card-content" data-location-name="Fort de Pomègues">
-            <img class="card-image" width="335" height="124" alt="image Fort de Pomègues" src="img/pomegues.jpg">
+            <img class="card-image" --width="335" height="128" alt="image Fort de Pomègues" src="img/pomegues.jpg">
             <figcaption class="card-desc">
               <h3 class="card-title">Fort de Pomègues</h3>
             </figcaption>
@@ -347,7 +364,7 @@
         <!--\\\\\ Card /////-->
         <a class="card card-link" href="#">
           <figure class="card-content" data-location-name="Parc national des Calanques">
-            <img class="card-image" width="335" height="124" alt="image Parc national des Calanques"
+            <img class="card-image" --width="335" height="128" alt="image Parc national des Calanques"
               src="img/calanques.jpg">
             <figcaption class="card-desc">
               <h3 class="card-title">Parc national des Calanques</h3>
@@ -358,7 +375,7 @@
         <!--\\\\\ Card /////-->
         <a class="card card-link" href="#">
           <figure class="card-content" data-location-name="Notre-Dame-de-la-Garde">
-            <img class="card-image" width="335" height="124" alt="image Notre-Dame-de-la-Garde"
+            <img class="card-image" --width="335" height="128" alt="image Notre-Dame-de-la-Garde"
               src="img/notre_dame.jpg">
             <figcaption class="card-desc">
               <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
@@ -399,9 +416,6 @@
     </nav>
   </footer>
   <!--///// FOOTER \\\\\-->
-
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/a96b215154.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
