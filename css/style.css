@@ -1,172 +1,157 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
-* {
-  font-family: "Raleway", sans-serif;
-}
+*:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas),
 *:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::before,
 *:not(.fa-classic, .fa-regular, .fa-solid, .far, .fas)::after {
   font-family: "Raleway", sans-serif;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 :root {
+  --color-black: black;
+  --color-white: white;
   --color-primary: #0065fc;
   --color-primary--light: #deebff;
   --color-secondary: #d9d9d9;
   --color-secondary--light: #f2f2f2;
 }
-.card-container {
-  --card_border-width: 0.25rem;
-  --card_border-radius: 1rem;
-  --card-image_border-radius: calc(
-    var(--card_border-radius) - var(--card_border-width)
-  );
+
+/* all icon to primary color by default */
+.icon {
+  color: var(--color-primary);
 }
-/************ TABLETTE ************/
-@media (min-width: 720px) {
-  .card-container {
-    --card_border-width: 0.375rem;
-    --card_border-radius: 1rem;
-  }
-}
-/************ DESKTOP ************/
-@media (min-width: 960px) {
-  .card-container {
-    --card_border-width: 0.5rem;
-    --card_border-radius: 1.25rem;
-  }
+.icon--round {
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
 }
 
 /********** HEADER **********/
-/* header nav link */
-.header a {
+/* header link */
+.header a.link-image {
   color: var(--color-primary);
 }
-.header .nav a {
+.header_nav a {
   --header_nav--border: 3px;
-  color: unset;
   font-weight: 500;
-  transition-duration: 0.3s;
   border: 0 solid var(--color-secondary--light);
   border-top-width: var(--header_nav--border);
+  transition-duration: 0.3s;
 }
-.header .nav a.active,
-.header .nav a:hover {
+.header_nav a.current,
+.header_nav a:hover {
+  text-decoration: none;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
 /********** SEARCH **********/
-
-/********** SEARCH -- City **********/
-.search--city .search__item {
+/********** SEARCH - LOCATION **********/
+.search-location .search__item {
   font-weight: bold;
-  border: 2px solid var(--color-secondary--light);
+  border: 2px solid var(--color-secondary);
 }
-.search--city ._label {
+.search-location .icon {
+  color: inherit;
+}
+.search__item.search-location_label {
   background-color: var(--color-secondary--light);
+  color: var(--color-black);
   /* border radius on the left */
   border-right: 0 none;
-  border-top-left-radius: var(--font-size);
-  border-bottom-left-radius: var(--font-size);
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
-.search--city ._input {
-  /* remove border */
+.search__item.search-location_input {
+  /* remove horizontal side border */
   border-left: 0 none;
   border-right: 0 none;
 }
-.search--city ._submit {
+.search__item.search-location_submit {
   background-color: var(--color-primary);
-  color: var(--color-secondary--light);
-
+  color: var(--color-white);
   /* border radius on the right */
   border-left: 0 none;
-  border-top-right-radius: var(--font-size);
-  border-bottom-right-radius: var(--font-size);
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
-/********** SEARCH -- Filters **********/
-.search--filter ._label {
-  /* max font-size + 2 * padding */
-  --box-height: calc(1.125rem + (2 * var(--font-size)));
-  --box-height--half: calc(var(--box-height) / 2);
-
-  border: 2px solid var(--color-secondary);
-  border-radius: var(--box-height--half);
-  /*  */
-  border-top-left-radius: var(--box-height--half) 50%;
-  border-bottom-left-radius: var(--box-height--half) 50%;
-  border-top-right-radius: var(--box-height--half) 50%;
-  border-bottom-right-radius: var(--box-height--half) 50%;
-}
-.search--filter .icon {
-  color: var(--color-primary);
-}
-/* remove checkbox */
-.search--filter input {
+/********** SEARCH - FILTER **********/
+/* remove input control */
+.search-filter input {
   display: none;
 }
-/* search filter when checked */
-.search--filter input:checked + ._label {
+/* all available space for the label */
+.search-filter label {
+  height: 100%;
+}
+/* search filter item when checked */
+.search-filter input:checked + label {
   border-color: var(--color-primary);
   background-color: var(--color-primary--light);
 }
-/* search filter on hover */
-.search--filter:hover ._label {
-  background-color: var(--color-primary--light);
-}
-.search--filter:hover input:not(:checked) + ._label {
-  scale: 1.1;
-  transition: 0.2s;
-}
-
-/********** SEARCH -- Info **********/
-.--info .icon {
-  color: var(--color-primary);
+.search-filter label {
+  /* max font-size + 2 * padding */
+  --box-height: calc(var(--rem-big--x1) + (2 * 1em));
+  --box-height--half: calc(var(--box-height) / 2);
   border: 2px solid var(--color-secondary);
-  border-radius: 50%;
+  border-radius: var(--box-height--half) / 50%;
+}
+/* search filter item on hover */
+.search-filter.item:hover input:not(:checked) + label {
+  background-color: var(--color-primary--light);
 }
 
 /********** CARD **********/
 .hosting_component {
   background-color: var(--color-secondary--light);
-  background-color: gray;
-}
-@media (min-width: 720px) {
-  .hosting_component {
-    padding: 2rem;
-    border-radius: 1rem;
-  }
 }
 .card {
+  --card_border-width: 0.25rem;
+  --card_border-radius: 1rem;
+  --card-image_border-radius: calc(
+    var(--card_border-radius) - var(--card_border-width)
+  );
+
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem 0.125rem hsl(0, 0%, 20%, 0.2);
   border: var(--card_border-width) solid white;
-}
-.card {
   border-radius: var(--card_border-radius);
 }
-.card-image {
-  /* border-top-left-radius: var(--card-image_border-radius);
-  border-top-right-radius: var(--card-image_border-radius); */
+.card_image {
   border-radius: var(--card-image_border-radius) var(--card-image_border-radius)
     0 0;
 }
-
-.material-symbols-rounded:not(.checked) {
-  color: #d3d3d3;
-  color: hsl(0, 0%, 80%);
-}
-.material-symbols-rounded.checked {
-  color: #0065fc;
-  color: hsl(216, 100%, 50%);
+.hosting-popular .card_image {
+  border-radius: var(--card-image_border-radius) 0 0 var(--card-image_border-radius);
 }
 
 /****************************/
 /********** MOBILE **********/
 /****************************/
-@media (width < 720px) {
+@media (max-width: 640px) {
+  /********** CONTAINER **********/
+  /********** HEADER *************/
   /* set border to bottom for navigation links */
-  .header .nav a {
+  .header_nav a {
     border-top-width: 0;
     border-bottom-width: var(--header_nav--border);
   }
+  /********** SEARCH *************/
+  /********** SEARCH -- City **********/
+  /********** SEARCH -- Filters **********/
+  /********** HOSTING **********/
 }
+/*///////// MOBILE //////////*/
+
+/*****************************/
+/********** DESKTOP **********/
+/*****************************/
+@media (min-width: 1024px) {
+  .hosting_component {
+    --card_border-width: 0.5rem;
+    --card_border-radius: 1.25rem;
+  }
+}
+/*///////// DESKTOP /////////*/

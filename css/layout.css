@@ -1,313 +1,383 @@
-/************ ALL / SMALL SCREEN ************/
-.container {
-  --container_min-width: 320px;
-  --container_max-width: 1600px;
-  /* width to 100% or max-width */
-  width: 100%;
-  width: min(100%, var(--container_max-width));
-  min-width: var(--container_min-width);
-  max-width: var(--container_max-width);
-  /* calculate width w/ minimum, preferred, or max */
-  width: clamp(var(--container_min-width), 100%, var(--container_max-width));
-
-  --container_padding-h: 1.25rem;
-  --container_padding-v: 1.25rem;
+/* remove `text-decoration` and `color` for all links */
+a {
+  text-decoration: none;
+  color: unset;
 }
-.search {
-  --font-size: 1rem;
-}
-.card-container {
-  --card-gap: 1rem;
-  --card--content_margin-h: 0.125rem;
+/* restore hover text-decoration; best practice */
+a:hover {
+  text-decoration: underline;
 }
 
-/************ TABLETTE ************/
-@media (min-width: 720px) {
-  .container {
-    --container_padding-h: 4.5rem;
-  }
-  .card-container {
-    --card-gap: 1.5rem;
-    --card--content_margin-h: 0.25rem;
-  }
-}
-
-/************ DESKTOP ************/
-@media (min-width: 960px) {
-  .container {
-    --container_padding-h: 2rem;
-  }
-  .card-container {
-    --card-gap: 2rem;
-    --card--content_margin-h: 0.5rem;
-  }
+:root {
+  --rem-big--x1: 1.125rem;
+  --rem-big--x2: 1.25rem;
+  --rem-big--x3: 1.375rem;
 }
 
 /* FontAwesome icons */
-i.icon,
-i.icon[class*="fa-"] {
+i.icon {
+  /* make it flex and center this sh it */
   box-sizing: content-box;
   text-align: center;
   display: inline-flex;
   align-content: center;
   justify-content: center;
-  /* width = icon font-size */
+  /* width = icon font-size; use `em` unit 💪*/
   min-width: 1em;
 }
-i.icon-big,
-i.icon-big[class*="fa-"] {
-  font-size: 1.125rem;
+.icon--big {
+  font-size: var(--rem-big--x1);
+}
+
+/* display the size of the inner image */
+.link-image {
+  display: inline-block;
+  line-height: 0;
 }
 
 /********** CONTAINER **********/
 .container {
   /* horizontal center */
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 
-  /* space around */
-  padding-right: var(--container_padding-h);
-  padding-left: var(--container_padding-h);
-  /* padding: var(--container_padding-v) var(--container_padding-h); */
-}
-.container.footer {
-  padding-bottom: var(--container_padding-v);
-}
+  --container_min-width: 320px;
+  --container_max-width: 1600px;
+  /* width to 100% or max-width */
+  width: 100%;
+  /* !!! DOES NOT PASS CSS VALIDATION !!! */
+  /* width: min(100%, var(--container_max-width)); */
+  width: min(100%, 320px);
+  min-width: var(--container_min-width);
+  max-width: var(--container_max-width);
+  /* calculate width w/ minimum, preferred, or max */
+  /* !!! DOES NOT PASS CSS VALIDATION !!! */
+  /* width: clamp(var(--container_min-width), 100%, var(--container_max-width)); */
+  width: clamp(320px, 100%, 1600px);
 
-/* remove text-decoration for all links */
-.container a {
-  text-decoration: none;
+  --container_padding-h: 4.5rem;
+  --container_margin-v: 2rem;
+  /* inner horizontal space around */
+  padding: 0 var(--container_padding-h);
+  /* outer vertical space at the bottom */
+  margin-bottom: var(--container_margin-v);
 }
 
 /********* HEADER **********/
-/* display the size of the inner image */
-.logo-link {
-  display: inline-block;
-  line-height: 0;
-}
-svg.logo-svg {
-  width: 60px;
-  height: 30px;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   /* vertically center all items */
   align-items: center;
 }
-
-/* center HEADER links */
+svg.logo-svg {
+  width: 60px;
+  height: 30px;
+}
+/* center text links */
 .header a {
   text-align: center;
-  text-decoration: none;
 }
-
-/* align navigation links vertically center */
-.header .nav {
+/* align navigation vertically center */
+.header_nav {
   display: flex;
   align-items: center;
 }
-
 /* space around navigation links */
-.header .nav a {
-  padding: 2rem;
+.header_nav a {
+  padding: 2em;
 }
 
 /********** SEARCH **********/
 .search_component {
-  /* display: inline-flex; */
+  display: flex;
+  align-content: center;
   align-items: center;
-  margin: var(--font-size) 0;
+  gap: 1rem var(--rem-big--x3);
+  margin: 1.5rem 0;
 }
-.search_component ._legend {
+.search_component .title {
   display: inline-block;
 }
 
-/********** SEARCH -- City **********/
-.search--city._item {
+/********** SEARCH - LOCATION **********/
+.search-location.item {
   /* reduce horizontal size w/ inline, make the container flex */
   display: inline-flex;
   align-items: center;
 }
-/* put the icon on the start */
-.search--city ._label {
-  order: -1;
-}
-.search--city .search__item {
-  font-size: var(--font-size);
+.search-location .search__item {
+  /* all item have same font-size */
+  font-size: 1em;
   /* give some space around items */
-  padding: var(--font-size);
+  padding: 1em;
   /* reset browser default border */
   border: 0 none;
 }
+/* put the label on the start */
+.search-location_label {
+  order: -1;
+}
+.search-location_submit {
+  cursor: pointer;
+}
 /* remove icon on search button */
-.search--city ._submit .icon {
+.search-location_submit .icon {
   display: none;
 }
 
-/********** SEARCH -- Filter **********/
-.search_component.--filter {
+/********** SEARCH - FILTER **********/
+.search_component.filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-filter {
+  display: inline-block;
+  /* all the same height */
+  height: 100%;
+}
+.search-filter.item {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.375rem;
-}
-.search--filter {
-  display: inline-block;
-  /* all the same height */
-  /* height: 100%; */
-}
-.search--filter._item {
-  display: inline-flex;
-  align-items: center;
   font-weight: bold;
 }
-.search--filter ._label {
+.search-filter.item,
+.search-filter_label {
+  cursor: pointer;
+}
+.search-filter_label {
   display: inline-flex;
   align-items: center;
-  padding: var(--font-size);
+  /* space around content */
+  padding: 1em;
   /* all available space */
   width: 100%;
-  height: 100%;
 }
-.search--filter .icon {
-  margin-right: var(--font-size);
+.search-filter .icon {
+  margin-right: 1em;
 }
 
-/********** SEARCH -- Info **********/
-.--info {
+/********** SEARCH - INFO **********/
+.search_component.info {
   display: inline-flex;
   align-items: center;
+  gap: unset;
 }
-.--info .icon {
-  padding: calc(var(--font-size) / 2);
-  margin-right: var(--font-size);
+.search_component.info .icon {
+  padding: 0.5em;
+  margin-right: 1em;
 }
 
 /********** HOSTING **********/
-.hosting {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-/********** CARD **********/
-.card-container {
+.hosting_component {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   align-items: center;
-  gap: var(--card-gap);
+  gap: 2rem;
+  padding: 2rem;
 }
-@media (min-width: 960px) {
-  .hosting {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .hosting_component.--popular .card-container {
-    grid-template-columns: 1fr;
-  }
-}
-@media (width < 480px) {
-  .card-container {
-    grid-template-columns: 1fr;
-  }
+.hosting_component .title,
+.hosting_component .more {
+  grid-column: 1/-1;
 }
 
+
+/********** CARD **********/
 .card,
-.card-content {
-  --card-image-height: 128px;
-  --card-image-height: 8rem;
+.card_content {
+  --card_desc-margin: 0.5em;
+  --card_desc-gap: 0.25em;
   display: block;
   width: 100%;
   height: 100%;
 }
-.card-image {
+.card_content {
+  display: flex;
+  flex-direction: column;
+}
+.card_image {
   object-fit: cover;
   display: block;
-  width: 100%;
-  height: var(--card-image-height);
 }
-.card-desc {
-  margin: auto 0.25rem;
-  margin: auto var(--card--content_margin-h);
-  /* height to fit available space (100% - image height) */
-  height: calc(100% - 128px);
+.card_desc {
+  margin: 0 var(--card_desc-margin);
+  /* fit all available vertical space */
+  flex: 1;
   display: grid;
+  gap: var(--card_desc-gap);
 }
-.card-desc > * {
+.card_desc > * {
   margin: 0;
-  padding: 0.25rem 0;
 }
-.card-rating {
+.card_rating {
   align-self: flex-end;
 }
+
+/********** HOSTING - RESULT **********/
+.hosting-result .card_image {
+  --card_image-height: 128px;
+  --card_image-height: 8rem;
+  width: 100%;
+  height: var(--card_image-height);
+}
+
+/********** HOSTING - POPULAR **********/
+.hosting-popular.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hosting-popular .card_image {
+  --card_image-width: 136px;
+  --card_image-width: 8.5rem;
+  --card_image-width: 40%;
+  width: var(--card_image-width);
+}
+.hosting-popular .card_content {
+  flex-direction: row;
+}
+
+/********** ACTIVITY **********/
+.activity {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+}
+.activity .title {
+  grid-column: 1/-1;
+}
+
+/********** FOOTER **********/
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
 /****************************/
 /********** MOBILE **********/
 /****************************/
-@media (width < 720px) {
+@media (max-width: 640px) {
   /********** CONTAINER **********/
+  .container {
+    --container_padding-h: 1.25rem;
+    --container_margin-v: 1rem;
+  }
 
   /********* HEADER **********/
   .container.header {
+    margin-top: var(--container_margin-v);
     /* reset horizontal padding */
-    padding-top: var(--container_padding-v);
     padding-right: 0;
     padding-left: 0;
     /* items in columns */
     flex-direction: column;
   }
-  /* header navigation links to half width */
-  .header .nav {
+  .header_nav {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* nb of element in the navigation  */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /********** SEARCH **********/
-  /* legend as block */
-  .search_component ._legend {
+  /* component & title as block */
+  .search_component,
+  .search_component .title {
     display: block;
   }
 
-  /********** SEARCH -- City **********/
+  /********** SEARCH - LOCATION **********/
   /* resize input to 100% width; hack for ultra small screen */
-  .search--city ._input {
+  .search-location_input {
     width: 100%;
   }
   /* restore icon & remove text on search button */
-  .search--city ._submit .icon {
+  .search-location_submit .icon {
     display: inline-block;
   }
-  .search--city ._submit .text {
+  .search-location_submit .text {
     display: none;
   }
 
-  /********** SEARCH -- Filters **********/
-  .search_component.--filter {
+  /********** SEARCH -- FILTER **********/
+  .search_component.filter {
+    --column: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(var(--column), 1fr);
+    gap: 1em;
   }
-  .search--filter._legend {
-    grid-column: span 2;
+  .search-filter.title {
+    grid-column: 1/-1;
+    /* remove bottom gap */
+    margin-bottom: -1em;
   }
-  .search--filter._item {
+  .search-filter.item {
     font-size: 0.75rem;
   }
-  .search--filter .icon {
-    margin-right: 0.5rem;
-    margin-right: calc(var(--font-size) / 2);
+  .search-filter .icon {
+    margin-right: 0.5em;
   }
 
   /********** HOSTING **********/
   .hosting {
     gap: 0;
   }
-  .hosting_component.--popular {
+  .hosting_component {
+    --column: 1;
+  }
+  .hosting_component.popular {
     order: -1;
   }
 }
-/*///////////////////////////*/
 /*///////// MOBILE //////////*/
-/*///////////////////////////*/
+
+/*****************************/
+/********** DESKTOP **********/
+/*****************************/
+@media (width > 1024px) {
+  /********** CONTAINER **********/
+  .container {
+    --container_padding-h: 2rem;
+    margin: 0 auto;
+    margin-bottom: 2.5rem;
+    padding: 0 3rem;
+  }
+
+  /********** HEADER **********/
+  .header_nav {
+    /* nb of items */
+    --column: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--column), 1fr);
+  }
+
+  /********** SEARCH **********/
+  .search_title,
+  .search_headline {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  /********** SEARCH - FILTER **********/
+  .search_component.filter {
+    row-gap: 0.5rem;
+    column-gap: 3rem;
+  }
+  /********** SEARCH - INFO **********/
+  .search_component.info {
+    margin: 0;
+  }
+
+  /********** HOSTING **********/
+  .hosting {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+  }
+  .hosting_component.popular {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(3, 1fr);
+  }
+}
+/*///////// DESKTOP /////////*/
