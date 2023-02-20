@@ -1,3 +1,4 @@
-.vscode/*
-__components/*
+# .vscode/
+__components/
 *.fig
+*.zip
